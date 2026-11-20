@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>面试证据工作台 · AI × HR</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="cases.js"></script>
+<script defer src="core.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+<header><div class="brand"><span aria-hidden="true">E</span> 面试证据工作台</div><div class="topnote">AI × HR <i></i> 招聘作品集</div></header>
+<main>
+<section class="hero">
+<p class="kicker">INTERVIEW PREPARATION</p>
+<h1>先看证据，<br>再问问题<span>。</span></h1>
+<p class="intro">从岗位能力出发，核对候选人原话，识别可迁移经验，生成有依据的电话初筛提纲。</p>
+</section>
+<nav class="cases" id="cases" aria-label="虚构案例"></nav>
+<div class="layout">
+<section class="panel input-panel">
+<div class="section-title"><span class="step">01</span><div><h2>面试材料</h2><p>公共演示请使用虚构或脱敏文本。</p></div></div>
+<label for="criteria">岗位能力 <small>一行一项，最多 8 项</small></label>
+<textarea id="criteria" rows="4" maxlength="1000" spellcheck="false"></textarea>
+<label for="resume">候选人材料 <small>最多 6,000 字</small></label>
+<textarea id="resume" rows="7" maxlength="6000" spellcheck="false"></textarea>
+<div class="actions"><button id="example" type="button">回放样例</button><button id="copy" type="button">复制 AI 提示词</button><button id="live" type="button" hidden>调用 OpenAI</button></div>
+<details id="import"><summary>导入 AI 返回的 JSON</summary>
+<p>把提示词发送给你选用的模型，再将返回的 JSON 粘贴到这里。</p>
+<label class="sr" for="raw">AI 返回的 JSON</label>
+<textarea id="raw" rows="7" maxlength="30000" placeholder="粘贴 JSON 或 JSON 代码块" spellcheck="false"></textarea>
+<button class="primary" id="review" type="button">校验并展示</button>
+</details>
+<p id="message" role="status" aria-live="polite"></p>
+</section>
+<section class="panel output-panel" aria-labelledby="out-heading">
+<div class="section-title"><span class="step">02</span><div><h2 id="out-heading">人工复核</h2><p id="source">请选择一个案例。</p></div></div>
+<div id="output" aria-live="polite"></div>
+<div class="export"><button class="primary" id="download" type="button" disabled>导出复核提纲 ↓</button></div>
+</section>
+</div>
+<footer>分析依据为输入材料。通过原文校验只表示引文存在，招聘人员仍需判断其含义，并核对追问是否适当。</footer>
+</main>
+</body>
+</html>
