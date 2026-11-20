@@ -76,7 +76,7 @@ function replay() {
     return;
   }
   raw.value = JSON.stringify({ rows: sample.rows }, null, 2);
-  showResult(raw.value, activeCase === 2 ? "异常回放 · 含一条故意植入的无来源引文" : "样例回放 · ChatGPT 生成的预置输出");
+  showResult(raw.value, activeCase === 2 ? "异常回放 · 含一条故意植入的无来源引文" : "样例回放 · 预生成结果");
 }
 
 function selectCase(index) {
